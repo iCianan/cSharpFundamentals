@@ -19,7 +19,9 @@ namespace cSharpFundementals
             ll.insert(14);
             ll.insert(37);
 
-
+            TreesAndGraphs.BinarySearchTree bst = new TreesAndGraphs.BinarySearchTree();
+            bst.Insert(5);
+            
 
         }
     }
