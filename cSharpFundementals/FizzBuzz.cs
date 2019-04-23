@@ -12,19 +12,20 @@ namespace cSharpFundementals
         {
             foreach (var item in arr)
             {
-                if (item % 5 == 0 && item % 3 == 0)
-                {
-                    Console.WriteLine("FizzBuzz");
-
-                }
+                bool newLine = false;
                 if (item % 3 == 0) 
                 {
-                    Console.WriteLine("Fizz");
+                    Console.Write("Fizz");
+                    newLine = true;
                 }
                 if (item % 5 == 0)
                 {
-                    Console.WriteLine("Buzz");
-
+                    Console.Write("Buzz");
+                    newLine = true;
+                }
+                if (newLine)
+                {
+                    Console.Write(Environment.NewLine);
                 }
             }
 
