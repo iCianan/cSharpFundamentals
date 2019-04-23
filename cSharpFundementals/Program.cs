@@ -21,7 +21,11 @@ namespace cSharpFundementals
 
             TreesAndGraphs.BinarySearchTree bst = new TreesAndGraphs.BinarySearchTree();
             bst.Insert(5);
-            
+
+
+            FizzBuzz fizz = new FizzBuzz();
+            int[] nums = { 2, 5, 12, 15, 20, 24, 30 }; // buzz fizzbuzz buzz fizz fizzbuzz
+            fizz.fizzBuzz(nums);
 
         }
     }
