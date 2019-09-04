@@ -29,9 +29,9 @@ namespace cSharpFundementals
             //string[] stringArray = { "tom", "t", "tomato", "toffee", "tommy" };
             //LeetCode leetCode = new LeetCode();
             //leetCode.LongestCommonPrefix(stringArray);
-            //leetCode.IsParenthesesValid("[]()}");
-            var names = Generics.GenerateNamesArrayList();
-            Generics.PrintNames(names);
+            ////leetCode.IsParenthesesValid("[]()}");
+            //var names = Generics.GenerateNamesArrayList();
+            //Generics.PrintNames(names);
             
 
 

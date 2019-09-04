@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.57
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSharpFundementals", "cSharpFundementals\cSharpFundementals.csproj", "{08C8C5EF-289D-40DF-B408-95BCCB4D5F52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cSharpFundementals", "cSharpFundementals\cSharpFundementals.csproj", "{08C8C5EF-289D-40DF-B408-95BCCB4D5F52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewPrep", "InterviewPrep\InterviewPrep.csproj", "{78C6074A-85B7-490A-AEB3-A810ADFE4DB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{08C8C5EF-289D-40DF-B408-95BCCB4D5F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C8C5EF-289D-40DF-B408-95BCCB4D5F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C8C5EF-289D-40DF-B408-95BCCB4D5F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C6074A-85B7-490A-AEB3-A810ADFE4DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C6074A-85B7-490A-AEB3-A810ADFE4DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C6074A-85B7-490A-AEB3-A810ADFE4DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C6074A-85B7-490A-AEB3-A810ADFE4DB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9394F3E4-2674-42FF-AD50-4C4E719F6FEC}
 	EndGlobalSection
 EndGlobal

@@ -35,15 +35,15 @@ namespace cSharpFundementals
             names.Add("Helm");
             return names;
         }
-        public static List<T> GenerateNames()
-        {
-            List<T> names = new List<T>();
-            names.Add("Gamma");
-            names.Add("Vlissides");
-            names.Add("Johnson");
-            names.Add("Helm");
-            return names;
-        }
+        //public static List<T> GenerateNames()
+        //{
+        //    List<T> names = new List<T>();
+        //    names.Add("Gamma");
+        //    names.Add("Vlissides");
+        //    names.Add("Johnson");
+        //    names.Add("Helm");
+        //    return names;
+        //}
         public static void PrintNames(List<string> names)
         {
             foreach (string name in names)
