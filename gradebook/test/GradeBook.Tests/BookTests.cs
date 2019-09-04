@@ -11,7 +11,7 @@ namespace GradeBook.Tests
         }
 
         [Test]
-        public void ShouldReturnGradeAverage()
+        public void ShouldComputeAccurateStatistics()
         {
             //arrange
             var book = new Book("");
@@ -20,10 +20,12 @@ namespace GradeBook.Tests
             book.AddGrade(97.7);
             //act
             var results = book.ComputeStatistics();
-            var sut = Math.Round(results.Average);
+           
 
             //assert
-            Assert.That(sut, Is.EqualTo(87));
+            Assert.That(results.High, Is.EqualTo(97.7));
+            Assert.That(results.Low, Is.EqualTo(72.3d));
+            Assert.That(results.Average, Is.EqualTo(87.1).Within(0.1));
             
         }
     }

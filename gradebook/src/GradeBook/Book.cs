@@ -26,11 +26,11 @@ namespace GradeBook
         public Statistics ComputeStatistics()
         {
             var stats = new Statistics();                 
-            foreach (var number in _grades)
+            foreach (var grade in _grades)
             {
-                stats.Low = Math.Min(number, stats.Low);
-                stats.High = Math.Max(number, stats.High);
-                stats.Average += number;
+                stats.Low = Math.Min(grade, stats.Low);
+                stats.High = Math.Max(grade, stats.High);
+                stats.Average += grade;
             }
             stats.Average /= _grades.Count;
             return stats;
