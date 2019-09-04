@@ -6,16 +6,16 @@ namespace GradeBook
 {
     public class Book
     {
-        private List<double> _grades { get; set; }
-        private string _name { get; set; }
+        public List<double> Grades { get; private set; }
+        public string Name { get; private set; }
         public Book(string name)
         {
-            _grades = new List<double>();
-            _name = name;
+            Grades = new List<double>();
+            Name = name;
         }
         public void AddGrade(double grade)
         {
-            _grades.Add(grade);
+            Grades.Add(grade);
         }
         public void ShowStatistics(Statistics stats)
         {
@@ -26,13 +26,13 @@ namespace GradeBook
         public Statistics ComputeStatistics()
         {
             var stats = new Statistics();                 
-            foreach (var grade in _grades)
+            foreach (var grade in Grades)
             {
                 stats.Low = Math.Min(grade, stats.Low);
                 stats.High = Math.Max(grade, stats.High);
                 stats.Average += grade;
             }
-            stats.Average /= _grades.Count;
+            stats.Average /= Grades.Count;
             return stats;
         }
 
