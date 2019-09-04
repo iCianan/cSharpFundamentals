@@ -6,7 +6,7 @@ using System.Text;
 
 namespace cSharpFundementals
 {
-    public class Generics
+    public class Generics<T>
     {
         public static string[] GenerateNamesArray()
         {
@@ -35,9 +35,9 @@ namespace cSharpFundementals
             names.Add("Helm");
             return names;
         }
-        public static List<string> GenerateNames()
+        public static List<T> GenerateNames()
         {
-            List<string> names = new List<string>();
+            List<T> names = new List<T>();
             names.Add("Gamma");
             names.Add("Vlissides");
             names.Add("Johnson");
