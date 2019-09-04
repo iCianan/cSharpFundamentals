@@ -17,6 +17,10 @@ namespace GradeBook
         {
             Grades.Add(grade);
         }
+        public void ChangeName(string name)
+        {
+            Name = name;
+        }
         public void ShowStatistics(Statistics stats)
         {
             Console.WriteLine($"The lowest grade is {stats.Low}");

@@ -14,6 +14,25 @@ namespace GradeBook.Tests
             Assert.That(book1, Is.SameAs(book2));
         }
         [Test]
+        public void ValueTypesAlsoPassByValue()
+        {
+            var x  = GetInt();
+            SetInt(ref x);   
+            
+            Assert.That(x, Is.EqualTo(42));
+        }
+
+        private void SetInt(ref int x)
+        {
+            x = 42;
+        }
+
+        private int GetInt()
+        {
+            return 3;
+        }
+
+        [Test]
         public void ShouldReferenceDifferentObject()
         {
             var book1 = GetBook("Book 1");
@@ -21,6 +40,22 @@ namespace GradeBook.Tests
  
             Assert.That(book1, !Is.SameAs(book2));
         }
+        [Test]
+        public void ShouldReturnNewName()
+        {
+            var book1 = GetBook("Book 1");
+            SetName(book1, "New Name");
+
+
+            Assert.That(book1.Name, Is.EqualTo("New Name"));
+        }
+
+        private void SetName(Book book, string name)
+        {
+            book.ChangeName(name);
+
+        }
+
         Book GetBook(string name)
         {
             return new Book(name);
