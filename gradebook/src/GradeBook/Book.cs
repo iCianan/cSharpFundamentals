@@ -17,28 +17,23 @@ namespace GradeBook
         {
             _grades.Add(grade);
         }
-        public Dictionary<string, double> ShowStatistics()
+        public void ShowStatistics(Statistics stats)
         {
-            var highGrade = double.MinValue;
-            var lowGrade = double.MaxValue;
-            var average = 0.0;
-            var results = new Dictionary<string, double>();        
-
+            Console.WriteLine($"The lowest grade is {stats.Low}");
+            Console.WriteLine($"The highest grade is {stats.High}");
+            Console.WriteLine($"The average grade is {stats.Average:N1}");
+        }
+        public Statistics ComputeStatistics()
+        {
+            var stats = new Statistics();                 
             foreach (var number in _grades)
             {
-                lowGrade = Math.Min(number, lowGrade);
-                highGrade = Math.Max(number, highGrade);
-                average += number;
+                stats.Low = Math.Min(number, stats.Low);
+                stats.High = Math.Max(number, stats.High);
+                stats.Average += number;
             }
-
-            average /= _grades.Count;
-            results.Add("High Grade", highGrade);
-            results.Add("Low Grade", lowGrade);
-            results.Add("Average", average);
-            Console.WriteLine($"The lowest grade is {lowGrade}");
-            Console.WriteLine($"The highest grade is {highGrade}");
-            Console.WriteLine($"The average grade is {results:N1}");
-            return results;
+            stats.Average /= _grades.Count;
+            return stats;
         }
 
     }

@@ -19,8 +19,8 @@ namespace GradeBook.Tests
             book.AddGrade(91.3);
             book.AddGrade(97.7);
             //act
-            var results = book.ShowStatistics();
-            var sut = Math.Round(results["Average"]);
+            var results = book.ComputeStatistics();
+            var sut = Math.Round(results.Average);
 
             //assert
             Assert.That(sut, Is.EqualTo(87));

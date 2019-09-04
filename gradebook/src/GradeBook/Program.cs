@@ -18,7 +18,8 @@ namespace GradeBook
             {
                 book.AddGrade(number);
             }
-            book.ShowStatistics();
+            var stats = book.ComputeStatistics();
+            book.ShowStatistics(stats);
 
         }
     }
