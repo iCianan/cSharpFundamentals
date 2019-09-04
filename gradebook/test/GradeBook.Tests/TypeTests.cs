@@ -21,6 +21,21 @@ namespace GradeBook.Tests
             
             Assert.That(x, Is.EqualTo(42));
         }
+        [Test]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Keenan";
+            var upper = MakeUpperCase(name);
+
+            Assert.That(name, Is.EqualTo("Keenan"));
+            Assert.That(upper, Is.EqualTo("KEENAN"));
+
+        }
+
+        private string MakeUpperCase(string name)
+        {
+            return name.ToUpper();
+        }
 
         private void SetInt(ref int x)
         {
