@@ -7,9 +7,10 @@ namespace InterviewPrep
         static void Main(string[] args)
         {
             Arrays arrays = new Arrays();
-            int[] numbers = { 5, 8, 6, -4 };
+            int[] numbers = { 15, 8, 62, 1, -1 };
             int targetSum = 2;
             arrays.TwoNumberSum(numbers, targetSum);
+            arrays.BubbleSort(numbers);
         }
     }
 }
