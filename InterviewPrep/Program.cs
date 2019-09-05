@@ -6,7 +6,10 @@ namespace InterviewPrep
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Arrays arrays = new Arrays();
+            int[] numbers = { 5, 8, 6, -4 };
+            int targetSum = 2;
+            arrays.TwoNumberSum(numbers, targetSum);
         }
     }
 }
