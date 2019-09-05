@@ -59,9 +59,7 @@ namespace InterviewPrep
                         array[j + 1] = temp;
                        
                     } 
-                }
-
-                
+                }                
             }
             return array;
         }
