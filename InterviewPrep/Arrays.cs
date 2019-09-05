@@ -30,5 +30,21 @@ namespace InterviewPrep
             }
             return new int[] { };
         }
+        public int[] TwoNumberSumTernary(int[] array, int targetSum)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                int firstNumber = array[i];
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    int secondNumber = array[j];        
+                    if (firstNumber + secondNumber == targetSum)
+                    {
+                        return firstNumber > secondNumber ? new int[] { secondNumber, firstNumber } : new int[] { firstNumber, secondNumber };                        
+                    } 
+                }
+            }
+            return new int[] { };
+        }
     }
 }
