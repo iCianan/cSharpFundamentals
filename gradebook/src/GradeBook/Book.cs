@@ -10,12 +10,20 @@ namespace GradeBook
         public string Name { get; private set; }
         public Book(string name)
         {
-            Grades = new List<double>();
+            Grades = new List<double>();    
             Name = name;
         }
         public void AddGrade(double grade)
         {
-            Grades.Add(grade);
+            if (grade <=100 && grade >=0)
+            {
+                Grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Bad grade");
+            }
+            
         }
         public void ChangeName(string name)
         {

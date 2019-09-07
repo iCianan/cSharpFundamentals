@@ -28,5 +28,19 @@ namespace GradeBook.Tests
             Assert.That(results.Average, Is.EqualTo(87.1).Within(0.1));
             
         }
+
+        [Test]
+        public void ShouldDenyEnterLargeNumbers()
+        {
+            var book = new Book("");
+            book.AddGrade(105);
+
+            var results = book.Grades;
+
+            Assert.That(results.Contains(105), Is.False);
+
+
+            
+        }
     }
 }
