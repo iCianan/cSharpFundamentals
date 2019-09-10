@@ -24,7 +24,7 @@ namespace GradeBook
                 }
                 try
                 {
-                    book.AddGrade(double.Parse(input));
+                    book.AddGrade(input);
 
                 }
                 catch (ArgumentException ex)

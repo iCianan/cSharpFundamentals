@@ -7,11 +7,33 @@ namespace GradeBook
     public class Book
     {
         public List<double> Grades { get; private set; }
-        public string Name { get; private set; }
+        public string Name { get; private set ; }
+        public const string CATEGORY = "science";
         public Book(string name)
         {
             Grades = new List<double>();    
             Name = name;
+        } 
+        public void AddGrade(string letter)
+        {
+            switch (letter) 
+            {
+                case "A":
+                    AddGrade(90);
+                    break;
+                case "B":
+                    AddGrade(80);
+                    break;
+                case "C":
+                    AddGrade(70);
+                    break;
+                case "D":
+                    AddGrade(60);
+                    break;
+                default:
+                    AddGrade(50);
+                    break;
+            }
         }
         public void AddGrade(double grade)
         {

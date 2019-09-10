@@ -68,7 +68,6 @@ namespace GradeBook.Tests
         private void SetName(Book book, string name)
         {
             book.ChangeName(name);
-
         }
 
         Book GetBook(string name)
