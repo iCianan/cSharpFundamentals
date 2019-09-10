@@ -14,15 +14,29 @@ namespace GradeBook
             var input = Console.ReadLine();
             book.ChangeName(input);
 
-            while (input != "q")
+            while (true)
             {
                 log.Log("Enter your grade: ");
                 input = Console.ReadLine();
-                if (input?.ToLower() == "q" || input == "")
+                if (input.ToLower() == "q" || input == "")
                 {
                     break;
                 }
-                book.AddGrade(Convert.ToDouble(input));
+                try
+                {
+                    book.AddGrade(double.Parse(input));
+
+                }
+                catch (ArgumentException ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
+                catch (FormatException ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
             }
             var stats = book.ComputeStatistics();
             book.ShowStatistics(stats);
