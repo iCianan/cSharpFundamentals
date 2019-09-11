@@ -25,7 +25,7 @@ namespace GradeBook.Tests
         }
 
         [Test]
-        public void ShouldDenyEnterLargeNumbers()
+        public void ShouldNotAcceptLargeNumbers()
         {
             var book = new Book("");
             var ex = Assert.Throws<ArgumentException>(
