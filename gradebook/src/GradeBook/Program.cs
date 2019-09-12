@@ -8,8 +8,7 @@ namespace GradeBook
     static void Main(string[] args)
     {
       var book = new Book("KB's Grade Book");
-      book.GradeAdded += EventThing;
-      book.GradeAdded += EventThing;
+
 
       var log = new Logger();
       log.Log("Welcome to GradeBook Platinum. Press Q when you are done");

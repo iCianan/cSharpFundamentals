@@ -5,12 +5,11 @@ using System.Collections.Generic;
 namespace GradeBook
 {
   public delegate void GradeAddedDelegate(object sender, EventArgs args);
-  public class Book
+  public class Book : NamedObject
   {
     public List<double> Grades { get; private set; }
-    public string Name { get; private set; }
     public const string CATEGORY = "science";
-    public Book(string name)
+    public Book(string name) : base(name)
     {
       Grades = new List<double>();
       Name = name;
