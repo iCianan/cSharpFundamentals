@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 namespace GradeBook
 {
 
-    public class Statistics
+  public class Statistics
+  {
+    public double Average;
+    public double High;
+    public double Low;
+    public char letter;
+    public Statistics()
     {
-        public double Average;
-        public double High;
-        public double Low;
-        public Statistics()
-        {
-            Average = 0.0;
-            High = double.MinValue;
-            Low = double.MaxValue;
+      Average = 0.0;
+      High = double.MinValue;
+      Low = double.MaxValue;
 
-        }
     }
+  }
 }

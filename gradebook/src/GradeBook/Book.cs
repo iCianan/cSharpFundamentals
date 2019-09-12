@@ -4,71 +4,88 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+  public delegate void GradeAddedDelegate(object sender, EventArgs args);
+  public class Book
+  {
+    public List<double> Grades { get; private set; }
+    public string Name { get; private set; }
+    public const string CATEGORY = "science";
+    public Book(string name)
     {
-        public List<double> Grades { get; private set; }
-        public string Name { get; private set ; }
-        public const string CATEGORY = "science";
-        public Book(string name)
+      Grades = new List<double>();
+      Name = name;
+    }
+
+    public void AddGrade(double grade)
+    {
+      if (grade <= 100 && grade >= 0)
+      {
+        Grades.Add(grade);
+        if (GradeAdded != null)
         {
-            Grades = new List<double>();    
-            Name = name;
-        } 
-        public void AddGrade(string letter)
-        {
-            switch (letter) 
-            {
-                case "A":
-                    AddGrade(90);
-                    break;
-                case "B":
-                    AddGrade(80);
-                    break;
-                case "C":
-                    AddGrade(70);
-                    break;
-                case "D":
-                    AddGrade(60);
-                    break;
-                default:
-                    AddGrade(50);
-                    break;
-            }
+          GradeAdded(this, new EventArgs());
         }
-        public void AddGrade(double grade)
-        {
-            if (grade <=100 && grade >=0)
-            {
-                Grades.Add(grade);
-            }
-            else
-            {
-                throw new ArgumentException($"Invalid {nameof(grade)}");
-            }
-            
-        }
-        public void ChangeName(string name)
-        {
-            Name = name;
-        }
-        public void ShowStatistics(Statistics stats)
-        {
-            Console.WriteLine($"The lowest grade is {stats.Low}");
-            Console.WriteLine($"The highest grade is {stats.High}");
-            Console.WriteLine($"The average grade is {stats.Average:N1}");
-        }
-        public Statistics ComputeStatistics()
-        {
-            var stats = new Statistics();                 
-            foreach (var grade in Grades)
-            {
-                stats.Low = Math.Min(grade, stats.Low);
-                stats.High = Math.Max(grade, stats.High);
-                stats.Average += grade;
-            }
-            stats.Average /= Grades.Count;
-            return stats;
-        }
+      }
+      else
+      {
+        throw new ArgumentException($"Invalid {nameof(grade)}");
+      }
 
     }
+    public event GradeAddedDelegate GradeAdded;
+
+    public void ChangeName(string name)
+    {
+      Name = name;
+    }
+    public void ShowStatistics(Statistics stats)
+    {
+      Console.WriteLine($"The lowest grade is {stats.Low}");
+      Console.WriteLine($"The highest grade is {stats.High}");
+      Console.WriteLine($"The average grade is {stats.Average:N1}");
+      Console.WriteLine($"The letter grade is {stats.letter}");
+
+    }
+    public Statistics ComputeStatistics()
+    {
+      var stats = new Statistics();
+      ComputeNumberGrade(stats); 
+      ComputeLetterGrade(stats);
+      return stats;
+    }
+    public void ComputeNumberGrade(Statistics stats)
+    {
+      foreach (var grade in Grades)
+      {
+        stats.Low = Math.Min(grade, stats.Low);
+        stats.High = Math.Max(grade, stats.High);
+        stats.Average += grade;
+      }
+      stats.Average /= Grades.Count;
+
+    }
+    public void ComputeLetterGrade(Statistics stats)
+    {
+      switch (stats.Average)
+      {
+        case var d when d >= 90.0:
+          stats.letter = 'A';
+          break;
+        case var d when d >= 80.0:
+          stats.letter = 'B';
+          break;
+        case var d when d >= 70.0:
+          stats.letter = 'C';
+          break;
+        case var d when d >= 60.0:
+          stats.letter = 'D';
+          break;
+
+        default:
+          stats.letter = 'F';
+          break;
+      }
+    }
+
+  }
 }
