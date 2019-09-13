@@ -7,14 +7,14 @@ namespace GradeBook
 {
   public class DiskBook : Book
   {
- 
+
     public const string CATEGORY = "science";
 
     public override event GradeAddedDelegate GradeAdded;
 
-    public DiskBook(string name): base(name)
+    public DiskBook(string name) : base(name)
     {
-      
+
     }
 
     public override void ChangeName(string name)
@@ -24,11 +24,18 @@ namespace GradeBook
 
     public override void AddGrade(double grade)
     {
-      string path = $"{Name}.txt";
-            
-      using (var writer = File.AppendText(path))
+      if (grade <= 100 && grade >= 0)
       {
-        writer.WriteLine(grade);
+        string path = $"{Name}.txt";
+
+        using (var writer = File.AppendText(path))
+        {
+          writer.WriteLine(grade);
+        }
+      }
+      else
+      {
+        throw new ArgumentException($"Invalid {nameof(grade)}");
       }
     }
 
@@ -42,7 +49,7 @@ namespace GradeBook
       {
         grades.Add(Convert.ToDouble(line));
       }
-      stats.ComputeGrades(grades);    
+      stats.ComputeGrades(grades);
 
 
     }

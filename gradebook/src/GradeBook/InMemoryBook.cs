@@ -11,7 +11,7 @@ namespace GradeBook
     public const string CATEGORY = "science";
     public InMemoryBook(string name) : base(name)
     {
-      Grades = new List<double>();
+     // Grades = new List<double>();
       Name = name;
     }
 

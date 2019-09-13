@@ -7,10 +7,8 @@ namespace GradeBook
   {
     static void Main(string[] args)
     {
-      //IBook book = new InMemoryBook("KB's Grade Book");
+      IBook? book1 = new InMemoryBook("KB's Grade Book");
       IBook book = new DiskBook("Larry's Grade Book");
-
-
       var log = new Logger();
       log.Log("Welcome to GradeBook Platinum. Press Q when you are done");
       log.Log("Enter your name: ");
@@ -18,6 +16,7 @@ namespace GradeBook
       book.ChangeName(name);
       EnterGrades(book, log);
       book.ComputeStatistics();
+      book1.ComputeStatistics();
     }
 
     private static void EnterGrades(IBook book, Logger log)
@@ -34,6 +33,7 @@ namespace GradeBook
         {
           var grade = Convert.ToDouble(input);
           book.AddGrade(grade);
+          book1.AddGrade(grade);
         
         }
         catch (ArgumentException ex)

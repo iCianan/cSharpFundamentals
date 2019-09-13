@@ -1,32 +1,29 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace GradeBook.Tests
 {
   public class BookTests
   {
-    //[Test]
-    //public void ShouldComputeAccurateStatistics()
-    //{
+    [Test]
+    public void ShouldComputeAccurateStatistics()
+    {
 
-    //  var stats = new Statistics();
-    //  stats.ComputeGrades(Grades);
-    //  //arrange
-    //  var book = new InMemoryBook("");
-    //  var stats = new 
-    //  book.AddGrade(72.3);
-    //  book.AddGrade(91.3);
-    //  book.AddGrade(97.7);
-    //  //act
-    //  book.ComputeStatistics();
+      //arrange
+      var stats = new Statistics();
+      var grades = new List<double>() { 72.3, 91.3, 97.7 };
+
+      //act
+      stats.ComputeGrades(grades);
 
 
-    //  //assert
-    //  Assert.That(results.High, Is.EqualTo(97.7));
-    //  Assert.That(results.Low, Is.EqualTo(72.3d));
-    //  Assert.That(results.Average, Is.EqualTo(87.1).Within(0.1));
-    //  Assert.That(results.Letter, Is.EqualTo('B'));
-    //}
+      //assert
+      Assert.That(stats.High, Is.EqualTo(97.7));
+      Assert.That(stats.Low, Is.EqualTo(72.3d));
+      Assert.That(stats.Average, Is.EqualTo(87.1).Within(0.1));
+      Assert.That(stats.Letter, Is.EqualTo('B'));
+    }
 
     [Test]
     public void ShouldNotAcceptLargeNumbers()
