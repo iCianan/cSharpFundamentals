@@ -7,7 +7,8 @@ namespace GradeBook
   {
     static void Main(string[] args)
     {
-      var book = new Book("KB's Grade Book");
+      //IBook book = new InMemoryBook("KB's Grade Book");
+      IBook book = new DiskBook("Larry's Grade Book");
 
 
       var log = new Logger();
@@ -15,7 +16,12 @@ namespace GradeBook
       log.Log("Enter your name: ");
       var name = Console.ReadLine();
       book.ChangeName(name);
+      EnterGrades(book, log);
+      book.ComputeStatistics();
+    }
 
+    private static void EnterGrades(IBook book, Logger log)
+    {
       while (true)
       {
         log.Log("Enter your grade: ");
@@ -26,8 +32,9 @@ namespace GradeBook
         }
         try
         {
-           var grade = Convert.ToDouble(input);
+          var grade = Convert.ToDouble(input);
           book.AddGrade(grade);
+        
         }
         catch (ArgumentException ex)
         {
@@ -40,10 +47,8 @@ namespace GradeBook
           Console.WriteLine(ex.Message);
         }
       }
-      var stats = book.ComputeStatistics();
-      book.ShowStatistics(stats);
-
     }
+
     static void EventThing(object o, EventArgs e)
     {
       Console.WriteLine("a grade was added");
