@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cSharpFundementals
+namespace InterviewPrep
 {
-    public class InsertionSort
+    public class Graph
     {
         
     }

@@ -33,7 +33,6 @@ namespace GradeBook
         {
           var grade = Convert.ToDouble(input);
           book.AddGrade(grade);
-          book1.AddGrade(grade);
         
         }
         catch (ArgumentException ex)

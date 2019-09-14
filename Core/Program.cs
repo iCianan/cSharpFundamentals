@@ -10,8 +10,6 @@ namespace cSharpFundementals
             // Console.WriteLine(op.FirstName);
             //  Console.WriteLine(op.A);
 
-            LinkedList ll = new LinkedList();
-            ll.insert(5);
             //Console.WriteLine(ll.Head);
             //ll.insert(15);
             //ll.insert(24);
