@@ -19,13 +19,19 @@ namespace ACM.Tests
       Customer.FirstName = "Keenan";
       Customer.LastName = "Benning";
 
-      string expected = "Keenan, Benning";
+
+      string expected = "Benning, Keenan";
 
       string actual = Customer.FullName;
 
       Assert.That(expected, Is.EqualTo(actual));
+    }
+    [Test]
+    public void StaticTypeChecker()
+    {
+      Customer.InstanceCount++;
 
-
+      Assert.That(Customer.InstanceCount, Is.EqualTo(1));
     }
   }
 }
