@@ -13,6 +13,10 @@ namespace InterviewPrep
            int nope = search.BinarySearch(nums, 8);
             Console.WriteLine(yep);
             Console.WriteLine(nope);
+            yep = search.BinarySearchRecursive(nums, 78, 0, nums.Length - 1);
+            nope = search.BinarySearchRecursive(nums, 8, 0, nums.Length - 1);
+            Console.WriteLine(yep);
+            Console.WriteLine(nope);
         }
     }
 }

@@ -3,8 +3,8 @@ using NUnit.Framework;
 
 namespace Tests
 {
-  public class Tests
-  {
+  public class RecursionTests
+    {
     Recursion recursion;
 
     [SetUp]

@@ -102,5 +102,24 @@ namespace InterviewPrep
             }
             return -1;
         }
+        public int BinarySearchRecursive(int[] array, int value, int low, int high)
+        {
+            if (low > high)
+            {
+                return -1;
+            }
+            int mid = (low + high) / 2;
+            if (array[mid] > value)
+            {
+                return BinarySearchRecursive(array, value, low, mid - 1);
+            }
+            else if (array[mid] < value)
+            {
+                return BinarySearchRecursive(array, value, mid + 1, high);
+            } else {
+                return mid;
+            }
+
+        }
     }
 }
