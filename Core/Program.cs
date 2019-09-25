@@ -20,9 +20,8 @@ namespace Core
             }
             foreach (var num in numbers)
             {
-                queue.Dequeue();
+                Console.WriteLine(queue.Dequeue());                
             }
-
         }
     }
 }

@@ -35,23 +35,14 @@ namespace Core
             
         }
 
-        public Node Dequeue()
+        public int Dequeue()
         {
-            if (First == null)
-            {
-                throw new Exception("Nothing in queue");
-            }
+            if (First == null) throw new NullReferenceException("Nothing in queue");
             Node current = First;
+            if (First == Last) Last = null;
             First = current.Next;
-            if (First == null)
-            {
-                Last = First;
-                Size--;
-                return current;
-                
-            }
             Size--;
-            return current;
+            return current.Val;
         }
 
         public class Node
