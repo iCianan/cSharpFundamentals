@@ -53,7 +53,7 @@ namespace Core
             }
             adjacencyList.Remove(vertex);
         }
-        public void DepthFirstRecursive(string start)
+        public List<string> DepthFirstRecursive(string start)
         {
             List<string> results = new List<string>();
             Dictionary<string, bool> visted = new Dictionary<string, bool>();
@@ -69,8 +69,29 @@ namespace Core
                 }
             }
             SearchNeighbors(start);
-            
+            return results;           
         
+        }
+        public List<string> DepthFirstIterative(string start)
+        {
+            Stack<string> stack = new Stack<string>();
+            List<string> results = new List<string>();
+            Dictionary<string, bool> visted = new Dictionary<string, bool>(); 
+            stack.Push(start);
+            visted[start] = true;
+            while (stack.Count > 0)
+            {
+                string temp = stack.Pop();
+                results.Add(temp);
+                foreach (string neighbor in adjacencyList[temp]) {
+                    if (!visted.ContainsKey(neighbor))
+                    {
+                        visted[neighbor] = true;
+                        stack.Push(neighbor);
+                    }
+                }
+            }
+            return results;
         }
     }
 }

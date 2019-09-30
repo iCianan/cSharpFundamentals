@@ -107,6 +107,7 @@ namespace Core
             //    Console.WriteLine(item);
             //}
             graph.DepthFirstRecursive("Michigan");
+            graph.DepthFirstIterative("Michigan");
 
 
         }
