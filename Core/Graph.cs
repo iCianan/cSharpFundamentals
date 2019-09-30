@@ -40,5 +40,16 @@ namespace Core
                 adjacencyList[v2].Remove(v1);
             }
         }
+        public void RemoveVertex(string vertex)
+        {
+            if (adjacencyList.ContainsKey(vertex))
+            {
+                foreach (var edge in adjacencyList[vertex])
+                {
+                    adjacencyList[edge].Remove(vertex);
+                }
+            }
+            adjacencyList.Remove(vertex);
+        }
     }
 }
