@@ -97,15 +97,17 @@ namespace Core
             graph.AddEdge("Pennsylvania", "North Carolina");
             graph.AddEdge("North Carolina", "Florida");
 
-            foreach (var item in graph.adjacencyList["Michigan"])
-            {
-                Console.WriteLine(item);
-            }
-            graph.RemoveVertex("Kansas");
-            foreach (var item in graph.adjacencyList["Michigan"])
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in graph.adjacencyList["Michigan"])
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //graph.RemoveVertex("Kansas");
+            //foreach (var item in graph.adjacencyList["Michigan"])
+            //{
+            //    Console.WriteLine(item);
+            //}
+            graph.DepthFirstRecursive("Michigan");
+
 
         }
     }

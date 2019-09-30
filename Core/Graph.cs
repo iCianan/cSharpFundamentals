@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+
 
 namespace Core
 {
@@ -50,6 +52,25 @@ namespace Core
                 }
             }
             adjacencyList.Remove(vertex);
+        }
+        public void DepthFirstRecursive(string start)
+        {
+            List<string> results = new List<string>();
+            Dictionary<string, bool> visted = new Dictionary<string, bool>();
+            void SearchNeighbors(string v) {
+                if (v == null) throw new Exception("Bad string");
+                visted[v] = true;
+                results.Add(v);
+                foreach (string neighbor in adjacencyList[v]) {
+                    if (!visted.ContainsKey(neighbor))
+                    {
+                        SearchNeighbors(neighbor);
+                    }
+                }
+            }
+            SearchNeighbors(start);
+            
+        
         }
     }
 }
