@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Core
 {
@@ -106,8 +107,18 @@ namespace Core
             //{
             //    Console.WriteLine(item);
             //}
-            graph.DepthFirstRecursive("Michigan");
-            graph.DepthFirstIterative("Michigan");
+            List<string> results = graph.DepthFirstRecursive("Michigan");
+            List<string> resultsb = graph.BreathFirstSearch("Michigan");
+
+            foreach (var item in results)
+            {
+                Console.WriteLine(item);
+            }
+
+            foreach (var item in resultsb)
+            {
+                Console.WriteLine(item);
+            }
 
 
         }

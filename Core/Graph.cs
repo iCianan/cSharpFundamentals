@@ -93,5 +93,27 @@ namespace Core
             }
             return results;
         }
+        public List<string> BreathFirstSearch(string start)
+        {
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(start);
+            List<string> results = new List<string>();
+            Dictionary<string, bool> visted = new Dictionary<string, bool>();
+            visted[start] = true;
+            while (queue.Count > 0)
+            {
+                string temp = queue.Dequeue();
+                results.Add(temp);
+                foreach (string neighbor in adjacencyList[temp])
+                {
+                    if (!visted.ContainsKey(neighbor))
+                    {
+                        visted[neighbor] = true;
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+            return results;
+        }
     }
 }
