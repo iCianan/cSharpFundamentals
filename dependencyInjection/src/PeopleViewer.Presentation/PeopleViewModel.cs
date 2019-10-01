@@ -24,9 +24,9 @@ namespace PeopleViewer.Presentation
             }
         }
 
-        public PeopleViewModel()
+        public PeopleViewModel(IPersonReader dataReader)
         {
-            DataReader = new ServiceReader();
+            DataReader = dataReader;
         }
 
         public void RefreshPeople()
