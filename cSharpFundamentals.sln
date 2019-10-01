@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleViewer.Presentation",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonDataReader.Service", "dependencyInjection\src\PersonDataReader.Service\PersonDataReader.Service.csproj", "{7E46C8FF-55E9-45D2-97EB-C7CCBF7F6E01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonDataReader.CSV", "dependencyInjection\src\PersonDataReader.CSV\PersonDataReader.CSV.csproj", "{184B239D-DB89-4060-97A5-30CF54984201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{7E46C8FF-55E9-45D2-97EB-C7CCBF7F6E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E46C8FF-55E9-45D2-97EB-C7CCBF7F6E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E46C8FF-55E9-45D2-97EB-C7CCBF7F6E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184B239D-DB89-4060-97A5-30CF54984201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184B239D-DB89-4060-97A5-30CF54984201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184B239D-DB89-4060-97A5-30CF54984201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184B239D-DB89-4060-97A5-30CF54984201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
