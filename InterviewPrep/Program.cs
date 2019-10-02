@@ -6,7 +6,12 @@ namespace InterviewPrep
     {
         static void Main(string[] args)
         {
-            int[] nums = new int[]{ 2, 4, 6, 8, 11, 23, 44, 56, 65, 78, 99 };
+            int[] nums = new int[]{ 99, 24, 2, 8, 6, 23, 11, 6, 65, 78, 47 };
+           int[] newNums = MergeSort.Sort(nums);
+            foreach (var item in newNums)
+            {
+                Console.WriteLine(item);
+            }
             Search search = new Search();
             bool results = search.IsUserNameTaken("john");
            int yep = search.BinarySearch(nums, 78);
