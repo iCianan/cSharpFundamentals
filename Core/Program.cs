@@ -79,24 +79,24 @@ namespace Core
             //foreach (var num in numbers)
             //{
             //    Console.WriteLine(queue.Dequeue());                
+            ////}
+            //Graph graph = new Graph();
+
+            //foreach (string state in states)
+            //{
+            //    graph.AddVertex(state);
             //}
-            Graph graph = new Graph();
 
-            foreach (string state in states)
-            {
-                graph.AddVertex(state);
-            }
-
-            graph.AddEdge("Alaska", "California");
-            graph.AddEdge("California", "Kansas");
-            graph.AddEdge("Kansas", "Michigan");
-            graph.AddEdge("Kansas", "Texas");
-            graph.AddEdge("Texas", "Florida");
-            graph.AddEdge("Michigan", "California");
-            graph.AddEdge("Michigan", "Florida");
-            graph.AddEdge("Michigan", "Pennsylvania");
-            graph.AddEdge("Pennsylvania", "North Carolina");
-            graph.AddEdge("North Carolina", "Florida");
+            //graph.AddEdge("Alaska", "California");
+            //graph.AddEdge("California", "Kansas");
+            //graph.AddEdge("Kansas", "Michigan");
+            //graph.AddEdge("Kansas", "Texas");
+            //graph.AddEdge("Texas", "Florida");
+            //graph.AddEdge("Michigan", "California");
+            //graph.AddEdge("Michigan", "Florida");
+            //graph.AddEdge("Michigan", "Pennsylvania");
+            //graph.AddEdge("Pennsylvania", "North Carolina");
+            //graph.AddEdge("North Carolina", "Florida");
 
             //foreach (var item in graph.adjacencyList["Michigan"])
             //{
@@ -104,21 +104,26 @@ namespace Core
             //}
             //graph.RemoveVertex("Kansas");
             //foreach (var item in graph.adjacencyList["Michigan"])
+            ////{
+            ////    Console.WriteLine(item);
+            ////}
+            //List<string> results = graph.DepthFirstRecursive("Michigan");
+            //List<string> resultsb = graph.BreathFirstSearch("Michigan");
+
+            //foreach (var item in results)
             //{
             //    Console.WriteLine(item);
             //}
-            List<string> results = graph.DepthFirstRecursive("Michigan");
-            List<string> resultsb = graph.BreathFirstSearch("Michigan");
 
-            foreach (var item in results)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in resultsb)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            foreach (var item in resultsb)
-            {
-                Console.WriteLine(item);
-            }
+            int[] nums = new int[] { 12,41,56,2,58,74,32,22,10,95};
+            int[] sorted = Sort.MergeSort(nums);
+            Console.WriteLine(sorted);
+
 
 
         }
