@@ -5,6 +5,7 @@ namespace Core
 {
     class Program
     {
+        public int MyProperty { get; set; }
         static void Main(string[] args)
         {
             //Arrays arrays = new Arrays();
@@ -123,6 +124,10 @@ namespace Core
             int[] nums = new int[] { 12,41,56,2,58,74,32,22,10,95};
             int[] sorted = Sort.MergeSort(nums);
             Console.WriteLine(sorted);
+
+            DoublyLinkedList list = new DoublyLinkedList();
+            Node node = new Node(4);
+            list.SetHead(node);
 
 
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core
+namespace InterviewPrep
 {
     public class FizzBuzz
     {
@@ -12,21 +12,11 @@ namespace Core
         {
             foreach (var item in arr)
             {
-                bool newLine = false;
-                if (item % 3 == 0) 
-                {
-                    Console.Write("Fizz");
-                    newLine = true;
-                }
-                if (item % 5 == 0)
-                {
-                    Console.Write("Buzz");
-                    newLine = true;
-                }
-                if (newLine)
-                {
-                    Console.Write(Environment.NewLine);
-                }
+                bool newLine = item % 3 == 0;
+                if (newLine) Console.Write("Fizz");
+                newLine = item % 5 == 0;
+                if (newLine) Console.Write("Buzz");
+                Console.Write(Environment.NewLine);
             }
 
         }
