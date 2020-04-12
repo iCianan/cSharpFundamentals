@@ -122,8 +122,10 @@ namespace Core
             //}
 
             int[] nums = new int[] { 12,41,56,2,58,74,32,22,10,95};
-            int[] sorted = Sort.MergeSort(nums);
+            int[] sorted = MergeSort.Sort(nums);
+            int[] sorted2 = InsertionSort.Sort(nums);
             Console.WriteLine(sorted);
+            Console.WriteLine(sorted2);
 
             DoublyLinkedList list = new DoublyLinkedList();
             Node node = new Node(4);

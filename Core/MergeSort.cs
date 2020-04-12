@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class Sort
+    public static class MergeSort
     {
-        public static int[] MergeSort(int[] numbers)
+        public static int[] Sort(int[] numbers)
         {
             if (numbers.Length <= 1) return numbers;
             int mid = numbers.Length / 2;
-            int[] left = MergeSort(numbers[..mid]);
-            int[] right = MergeSort(numbers[mid..]);
+            int[] left = Sort(numbers[..mid]);
+            int[] right = Sort(numbers[mid..]);
             return Merge(left, right);
         }
 
