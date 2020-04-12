@@ -11,8 +11,8 @@ namespace Core.Test
         [SetUp]
         public void Setup()
         {
-            unsortedArray = new int[] { 21, 11, 8, 3, 6, 14, 9 };
-            sorted = new int[] { 3, 6, 8, 9, 11, 14, 21 };
+            unsortedArray = new int[] { 21, 11, 8, 3, -11, 6, 14, 9 };
+            sorted = new int[] { -11, 3, 6, 8, 9, 11, 14, 21 };
         }
 
         [Test]

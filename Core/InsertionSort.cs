@@ -10,10 +10,7 @@ namespace Core
     {
         public static int[] Sort(int[] numbers)
         {
-            if (numbers.Length == 0)
-            {
-                return new int[] { };
-            }
+            if (numbers.Length <= 1) return numbers;
 
             for (int i = 1; i < numbers.Length; i++)
             {
