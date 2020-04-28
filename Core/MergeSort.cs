@@ -24,6 +24,7 @@ namespace Core
             int j = 0;
             while (i < left.Length && j < right.Length)
             {
+                //acceptable for a white board interview only
                 if (right[j] >= left[i]) results.Add(left[i++]);
                 else results.Add(right[j++]);
             }
