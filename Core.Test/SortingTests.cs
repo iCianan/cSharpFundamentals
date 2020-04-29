@@ -67,7 +67,7 @@ namespace Core.Test
         [Category("QuickSort")]
         public void QuickSort_Should_ReturnSortedArray_When_GivenNonEmptyArray()
         {
-            QuickSort.Sort(unsortedArray, 0, unsortedArray.Length -1);
+            QuickSort.Sort(unsortedArray);
             int[] actual = unsortedArray;
             
 
