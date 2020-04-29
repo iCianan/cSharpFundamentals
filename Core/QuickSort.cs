@@ -53,24 +53,6 @@ namespace Core
             }
         }
 
-        private static int Partition(int[] numbers, int start, int end)
-        {
-            int pivot = numbers[end];
-            int i = start - 1;
-
-            for (int j = start; j <= end; j++)
-            {
-                if (numbers[j] <= pivot)
-                {
-                    i++;
-                    swap(numbers, i, j);
-
-                }
-            }
-            swap(numbers, i + 1, end);
-            return i + 1;
-        }
-
         private static void swap(int[] numbers, int left, int right)
         {
             int temp = numbers[left];
