@@ -5,10 +5,10 @@ namespace InterviewPrep
     class Program
     {
         static void Main(string[] args)
-        {
-            FizzBuzz fizz = new FizzBuzz();
-            int[] nums = {5, 15, 6, 60};
-            fizz.fizzBuzz(nums);
+        //{
+        //    FizzBuzz fizz = new FizzBuzz();
+        //    int[] nums = {5, 15, 6, 60};
+        //    fizz.fizzBuzz(nums);
            // int[] nums = new int[]{ 99, 24, 2, 8, 6, 23, 11, 6, 65, 78, 47 };
            ////int[] newNums = MergeSort.Sort(nums);
     

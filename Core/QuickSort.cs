@@ -58,7 +58,6 @@ namespace Core
             int temp = numbers[left];
             numbers[left] = numbers[right];
             numbers[right] = temp;
-
         }
     }
 }

@@ -63,5 +63,20 @@ namespace InterviewPrep
             }
             return array;
         }
+
+        public void Playground()
+        {
+            int[] myArray = new int[6];
+
+            int[] numbers = { 1, 2, 3, 4, 5, 6 };
+
+            string[] days = { "Monday", "Tuesday", "Wednesday" };
+
+            for (int i = numbers.Length - 1; i < 0; i--)
+            {
+                Console.WriteLine(numbers); ;
+            }
+
+        }
     }
 }
