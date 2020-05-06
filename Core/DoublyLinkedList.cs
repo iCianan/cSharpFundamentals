@@ -1,151 +1,109 @@
-﻿// Feel free to add new properties and methods to the class.
+﻿
 
-
+using System;
 
 namespace Core
 {
-    public class DoublyLinkedList
+    public class DoublyLinkedList<T>
     {
-        public Node Head;
-        public Node Tail;
+        public Node<T> head;
+        public Node<T> tail;
+        public int count;
         public DoublyLinkedList()
         {
-            Head = new Node(1);
-            Head.Next = new Node(2);
-            Head.Next.Next = new Node(3);
-            Head.Next.Next.Next = new Node(4);
-            Head.Next.Next.Next.Next = new Node(5);
-            Tail = Head.Next.Next.Next.Next;
-      
+            this.head = null;
+            this.tail = null;
+            this.count = 0;      
         }
 
-        public void SetHead(Node node)
+       public void Add(T node)
         {
-            if (Head == null)
-            {
-                SetTail(node);
-            }
-            InsertBefore(Head, node);
-        }
+            Node<T> newNode = new Node<T>(node);
 
-        public void SetTail(Node node)
-        {
-            if (Tail == null)
+            if (head == null)
             {
-                Head = node;
-                Tail = node;
+                this.head = newNode;
+                this.tail = newNode;               
             }
-            InsertAfter(Tail, node);
+            else
+            {
+                this.tail.Next = newNode;
+                newNode.Prev = this.tail;
+                this.tail = newNode;
+            }
+            this.count++;
         }
-
-        public void InsertBefore(Node node, Node nodeToInsert)
+        public T RemoveAt(int index)
         {
-            if (Head == null)
+            if (index > count || index  < 0)
             {
-                SetHead(nodeToInsert);
+                throw new IndexOutOfRangeException("Get it together");
             }
-            Node current = Head;
-            while (current != null)
+
+            Node<T> current = head;
+            while (current != null && index != 0)
             {
-                if (current.Value == node.Value)
-                {
-                    nodeToInsert.Next = current;
-                    nodeToInsert.Prev = current.Prev;
-                    current.Prev.Next = nodeToInsert;
-                    current.Prev = nodeToInsert;
-                }
+                index--;
                 current = current.Next;
             }
+            RemoveNode(current);
+
+            return current.Value;           
         }
 
-        public void InsertAfter(Node node, Node nodeToInsert)
+        private void RemoveNode(Node<T> node)
         {
-            if (Head == null)
-            {
-                SetHead(nodeToInsert);
-            }
-            if (node == Tail)
-            {
-                Tail.Next = nodeToInsert;
-                nodeToInsert.Prev = Tail;
-                Tail = nodeToInsert;
-            }
-            Node current = Head;
-            while (current != null)
-            {
-                if (current.Value == node.Value)
-                {
-                    nodeToInsert.Next = current.Next;
-                    nodeToInsert.Prev = current;
-                    current.Next.Prev = nodeToInsert;
-                    current.Next = nodeToInsert;
-                }
-                current = current.Next;
-
-            }
+            node.Prev.Next = node.Next;
+            node.Next.Prev = node.Prev;
+            node.Next = null;
+            node.Prev = null;
         }
 
-        public void InsertAtPosition(int position, Node nodeToInsert)
+
+        public void SetHead(T node)
         {
-            if (Head == null)
-            {
-                SetHead(nodeToInsert);
-            }
-            Node current = Head;
-            int count = 1;
-            while (current != null)
-            {
-                if (count == position)
-                {
-                    InsertBefore(current, nodeToInsert);
-                }
-                current = current.Next;
-                count++;
-            }
+   
+        }
+
+        public void SetTail(T node)
+        {
+
+        }
+
+        public void InsertBefore(T node, T nodeToInsert)
+        {
+
+        }
+
+        public void InsertAfter(T node, T nodeToInsert)
+        {
+
+        }
+
+        public void Get(int position, T nodeToInsert)
+        {
+
         }
 
         public void RemoveNodesWithValue(int value)
         {
-            Node current = Head;
-            while (current != null)
-            {
-                if (current.Value == value)
-                {
-                    current.Prev.Next = current.Next;
-                    current.Next.Prev = current.Prev;
-                    current.Next = null;
-                    current.Prev = null;
-                }
-                current = current.Next;
-            }
+
         }
 
-        public void Remove(Node node)
-        {
-            RemoveNodesWithValue(node.Value);
-        }
 
-        public bool ContainsNodeWithValue(int value)
-        {
-            if (Head == null) return false;
-            Node current = Head;
-            while (current != null)
-            {
-                if (current.Value == value) return true;
-                current = current.Next;
-            }
-            return false;
-        }
+        //public bool ContainsNodeWithValue(int value)
+        //{
+
+        //}
     }
 
-    // Do not edit the class below.
-    public class Node
+    public class Node<T>
     {
-        public int Value;
-        public Node Prev;
-        public Node Next;
+        public T Value { get; set; }        
+        public Node<T> Next { get; set; }
+        public Node<T> Prev { get; set; }
 
-        public Node(int value)
+        public Node(T value)
         {
             this.Value = value;
         }
