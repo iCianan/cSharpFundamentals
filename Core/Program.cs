@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace Core
@@ -8,66 +9,63 @@ namespace Core
         public int MyProperty { get; set; }
         static void Main(string[] args)
         {
-
-
-
-            //        string[] states = {
-            //"Alaska",
-            //"Alabama",
-            //"Arkansas",
-            //"American Samoa",
-            //"Arizona",
-            //"California",
-            //"Colorado",
-            //"Connecticut",
-            //"District of Columbia",
-            //"Delaware",
-            //"Florida",
-            //"Georgia",
-            //"Guam",
-            //"Hawaii",
-            //"Iowa",
-            //"Idaho",
-            //"Illinois",
-            //"Indiana",
-            //"Kansas",
-            //"Kentucky",
-            //"Louisiana",
-            //"Massachusetts",
-            //"Maryland",
-            //"Maine",
-            //"Michigan",
-            //"Minnesota",
-            //"Missouri",
-            //"Mississippi",
-            //"Montana",
-            //"North Carolina",
-            //"North Dakota",
-            //"Nebraska",
-            //"New Hampshire",
-            //"New Jersey",
-            //"New Mexico",
-            //"Nevada",
-            //"New York",
-            //"Ohio",
-            //"Oklahoma",
-            //"Oregon",
-            //"Pennsylvania",
-            //"Puerto Rico",
-            //"Rhode Island",
-            //"South Carolina",
-            //"South Dakota",
-            //"Tennessee",
-            //"Texas",
-            //"Utah",
-            //"Virginia",
-            //"Virgin Islands",
-            //"Vermont",
-            //"Washington",
-            //"Wisconsin",
-            //"West Virginia",
-            //"Wyoming"
-            //        };
+            string[] states = {
+            "Alaska",
+            "Alabama",
+            "Arkansas",
+            "American Samoa",
+            "Arizona",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "District of Columbia",
+            "Delaware",
+            "Florida",
+            "Georgia",
+            "Guam",
+            "Hawaii",
+            "Iowa",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Massachusetts",
+            "Maryland",
+            "Maine",
+            "Michigan",
+            "Minnesota",
+            "Missouri",
+            "Mississippi",
+            "Montana",
+            "North Carolina",
+            "North Dakota",
+            "Nebraska",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "Nevada",
+            "New York",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Puerto Rico",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Virginia",
+            "Virgin Islands",
+            "Vermont",
+            "Washington",
+            "Wisconsin",
+            "West Virginia",
+            "Wyoming"
+                    };
 
             //        Graph graph = new Graph();
 
@@ -121,9 +119,26 @@ namespace Core
             //list.SetHead(node);
 
 
-            Arrays arrays = new Arrays();
-            arrays.ListNumbersBackwards();
-            arrays.ReadFromConsole();
+            //Arrays arrays = new Arrays();
+            //arrays.ListNumbersBackwards();
+            //arrays.ReadFromConsole();
+            foreach (var item in states)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("");
+            Stack<string> stack = new Stack<string>();
+            foreach (var item in states)
+            {
+                stack.Push(item);
+            }
+
+            while (stack.Count > 0)
+            {
+                string personName = stack.Pop();
+                Console.WriteLine(personName);
+            }
+            
         }
     }
 }
