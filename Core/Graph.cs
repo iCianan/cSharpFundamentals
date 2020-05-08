@@ -116,4 +116,41 @@ namespace Core
             return results;
         }
     }
+    public class BinarySearchTree<T>
+    {
+        public void Preorder(TreeNode<T> node, int level = 0)
+        {
+            var indent = new String(' ', 3 * level);
+            Console.WriteLine(indent + node.Value);
+
+            foreach (var child in node.Children)
+            {
+                Preorder(child, level + 1);
+            }
+        }
+
+        public void Postorder(TreeNode<T> node, int level =0)
+        {
+            foreach (var child in node.Children)
+            {
+                Postorder(child, level + 1);
+            }
+
+            var indent = new String(' ', 3 * level);
+            Console.WriteLine(indent + node.Value);
+        }
+    }
+
+    public class TreeNode<T>
+    {
+        public T Value { get; set; }
+        public List<TreeNode<T>> Children { get; set; }
+
+        public TreeNode(T value)
+        {
+            Value = value;
+            Children = new List<TreeNode<T>>();
+
+        }
+    }
 }
