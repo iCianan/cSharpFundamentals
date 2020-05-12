@@ -41,5 +41,28 @@ namespace Core.Test
 
             Assert.That(list.RemoveAt(1), Is.EqualTo(item2));
         }
+
+        [Test]
+        public void PrintReversedLinkedList_Should_DisplayLinkedListInReverseOrder_When_NonEmptyLinkedListPassed()
+        {
+            //arrange
+            var list = GetSampleLinkedList();
+
+            //act
+            list.PrintReversedLinkedList(list.head);
+
+            //assert
+        }
+
+        private DoublyLinkedList<int> GetSampleLinkedList()
+        {
+            var array = new int[] { 44, 21, 95, 36, 55, 47, 12, 1, 5, 6, 95 };
+            var results = new DoublyLinkedList<int>();
+            foreach (var item in array)
+            {
+                results.Add(item);
+            }
+            return results;
+        }
     }
 }

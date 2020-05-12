@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Core
 {
@@ -91,10 +92,15 @@ namespace Core
         }
 
 
-        //public bool ContainsNodeWithValue(int value)
-        //{
-
-        //}
+        public void PrintReversedLinkedList(Node<T> head)
+        {
+            if (head == null)
+            {
+                return;
+            }
+            PrintReversedLinkedList(head.Next);
+            Console.WriteLine(head.Value);
+        }
     }
 
     public class Node<T>

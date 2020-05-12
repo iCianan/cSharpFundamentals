@@ -58,6 +58,44 @@ namespace Core
             int allButLastSum = IterativeArraySumRecursive(numbers, size - 1);
             return lastNumber + allButLastSum;
         }
+        public int Fibonacci(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return n;
+            }
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+        public int countEvenPassed(int[] array)
+        {
+            ResultWrapper result = new ResultWrapper();
+            result.Result = 0;
+            countEvenPassed(array, 0, result);
+            return result.Result;
+        }
 
+        private void countEvenPassed(int[] array, int index, ResultWrapper result)
+        {
+            if (index >= array.Length) return;
+            if (array[index] % 2 == 0) result.Result++;
+            countEvenPassed(array, index + 1, result);
+        }
+
+        public int countEvenBuiltUp(int[] array)
+        {            
+            return countEvenBuiltUp(array, 0);
+        }
+
+        private int countEvenBuiltUp(int[] array, int index)
+        {
+            if (index >= array.Length) return 0;
+            int result = countEvenBuiltUp(array, index + 1);
+            if (array[index] % 2 == 0) result++;
+            return result;
+        }
+    }
+    public class ResultWrapper
+    {
+        public int Result { get; set; }
     }
 }
