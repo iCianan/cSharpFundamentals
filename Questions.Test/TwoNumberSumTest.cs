@@ -3,7 +3,7 @@ using Questions;
 
 namespace Questions.Test
 {
-    public class Tests
+    public class TwoNumberSumTests
     {
         TwoNumberSum twoNumberSum;
         [SetUp]

@@ -10,50 +10,76 @@ namespace Questions
     {
         public static bool ValidateSubsequence(int[] array, int[] sequence)
         {
-            int[] results = new int[sequence.Length];
-            //Check if second array only contains calues from first array
+            //Time O(n)
+            //Space O(n)
+            var results = new List<int>();
+                int i = 0;
+                int j = 0;
+                while (i < array.Length && j < sequence.Length)
+                {
+                    if (array[i] == sequence[j])
+                    {
+                        results.Add(sequence[j]);
+                        i++;
+                        j++;
+                    }
+                    else i++;
+                }
+                if (j != sequence.Length) return false;
+                int k = 0;
+                int l = 0;
+                while (k < results.Count)
+                {
+                    if (results[k] == sequence[l])
+                    {
+                        k++;
+                        l++;
+                    }
+                    else return false;
+                }
+                return true;            
+        }
+
+        //Time O(n)
+        //Space O(1)
+        public static bool AlgoValidateSubsequence(List<int> array, List<int> sequence)
+        {
             int i = 0;
             int j = 0;
-            while (i < array.Length && j < sequence.Length)
+            while (i < array.Count && j < sequence.Count)
             {
                 if (array[i] == sequence[j])
                 {
-                    results[j] = sequence[j];
                     i++;
                     j++;
                 }
-                else
+                else 
                 {
-                    i++;
+                    array.RemoveAt(i);
                 }
-            }
-            //if second array contains values not in the first array return false
-            if (j != sequence.Length)
-            {
-                return false;
+                
             }
 
-            // Now check that the ordering of the second array matches the ordering of the first array.
+            while (i < array.Count)
+            {
+                array.RemoveAt(i);
+            }
+
+            if (j != sequence.Count) return false;
+
 
             int k = 0;
             int l = 0;
-            while (k < results.Length)
+            while (k < array.Count)
             {
-                if (results[k] == sequence[l])
+                if (array[k] == sequence[l])
                 {
                     k++;
                     l++;
                 }
-                //if ordering is different return false
-
-                else
-                {
-                    return false;
-                }
+                else return false;
             }
-            //if we get to the end return true
             return true;
-
         }
     }
 }
