@@ -36,7 +36,7 @@ namespace Tests
         }
 
         [Test]
-        public void CountEvenPassed_Should_Return0_When_EmptyArrayPassed()
+        public void CountEvenPassed_Should_ReturnZero_When_EmptyArrayPassed()
         {
             //arrange
             var number = new int[] { };
