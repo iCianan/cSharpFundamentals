@@ -10,26 +10,28 @@ namespace Questions
 {
     public static class BranchSum
     {
+
+        // O(n) time | O(n) space
         public static List<int> BranchSums(BST root)
         {
-            if (root == null ) return new List<int>() { 0 };
+            var sums = new List<int>();
+            CalculateBranchSums(root, 0, sums);
+            return sums;
+        }    
+
+        public static List<int> CalculateBranchSums(BST root, int runningSum, List<int> sums)
+        {
+
+            if (root == null) return sums;
+            var newRunningSum = runningSum + root.value;
             if (root.left == null && root.right == null)
             {
-                return new List<int>() { root.value };
+                sums.Add(newRunningSum);
+                return sums;
             }
-            List<int> leftBranchSum = BranchSums(root.left);
-            List<int> rightBranchSum = BranchSums(root.right);
-            List<int> results = new List<int>(leftBranchSum);
-            foreach (var item in rightBranchSum)
-            {
-                results.Add(item);
-            }
-            for (int i = 0; i < results.Count(); i++)
-            {
-                results[i] += root.value;
-            }
-            return results;
-
+            CalculateBranchSums(root.left, newRunningSum, sums);
+            CalculateBranchSums(root.right, newRunningSum, sums);
+            return sums;
         }
     }
 }

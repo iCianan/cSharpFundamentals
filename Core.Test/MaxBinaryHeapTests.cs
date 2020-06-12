@@ -15,7 +15,10 @@ namespace Core.Test
         {
             //arrange
             var heap = new MaxBinaryHeap();
+            foreach (var item in collection)
+            {
 
+            }
             //act
             heap.Insert(55);
 

@@ -15,8 +15,8 @@ namespace Questions.Test
         public void BranchSum_Should_AddNewNodeToTree_When_GivenAnInteger()
         {
             //arrange
-            var BST = new BST(8);
-            var sut = new int[] { 2,4,5,8,9,10,6,7 };
+            var BST = new BST(12);
+            var sut = new int[] { 4,9,12,8,4,3 };
             foreach (var number in sut)
             {
                 BST.Insert(number);
