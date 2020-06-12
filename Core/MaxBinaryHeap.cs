@@ -26,15 +26,14 @@ namespace Core
         {
             int index = values.Count - 1;
             int element = values[index];
-            while (true)
+            while (index > 0)
             {
                 int parentIndex = (index - 1) / 2;
                 int parent = values[parentIndex];
                 if (element <= parent) break;
                 values[parentIndex] = element;
                 values[index] = parent;
-                index = parentIndex;
-                
+                index = parentIndex;                
             }
         }
     }
