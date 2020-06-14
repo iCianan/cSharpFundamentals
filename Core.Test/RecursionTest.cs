@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
+    [TestFixture]
     public class RecursionTests
     {
         Recursion recursion;
@@ -23,15 +24,16 @@ namespace Tests
         }
 
         [Test]
-        public void Fibonacci_Should_ReturnExpectedValue_When_PositiveNumberPassed()
+        public void GetNthFib_Should_ReturnExpectedValue_When_PositiveNumberPassed()
         {
             //arrange
             var number = 5;
 
             //act
-            var result = recursion.Fibonacci(number);
+            var result = recursion.GetNthFib(number);
 
             //assert
+
             Assert.That(result, Is.EqualTo(5));
         }
 
@@ -61,5 +63,42 @@ namespace Tests
             Assert.That(result, Is.EqualTo(2));
         }
 
+        [Test]
+        public void IterativeArraySum_Should_ReturnExpectedValue_When_ArrayOfIntegersPassed()
+        {
+            //arrange
+            var number = new int[] { 5, 6, 12 };
+
+            //act
+            var result = recursion.IterativeArraySum(number);
+
+            //assert
+            Assert.That(result, Is.EqualTo(23));
+        }
+        [Test]
+        public void ArraySumDelgate_Should_ReturnExpectedValue_When_ArrayOfIntegersPassed()
+        {
+            //arrange
+            var number = new int[] { 5, 6, 12 };
+
+            //act
+            var result = recursion.ArraySumDelgate(number);
+
+            //assert
+            Assert.That(result, Is.EqualTo(23));
+        }
+
+        [Test]
+        public void ArraySumRecursive_Should_ReturnExpectedValue_When_ArrayOfIntegersPassed()
+        {
+            //arrange
+            var number = new int[] { 5, 6, 12 };
+
+            //act
+            var result = recursion.ArraySumRecursive(number);
+
+            //assert
+            Assert.That(result, Is.EqualTo(23));
+        }
     }
 }

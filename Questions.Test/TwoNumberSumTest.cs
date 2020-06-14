@@ -1,24 +1,19 @@
 using NUnit.Framework;
 using Questions;
+using System;
 
 namespace Questions.Test
 {
+    [TestFixture]
     public class TwoNumberSumTests
     {
-        TwoNumberSum twoNumberSum;
-        [SetUp]
-        public void Setup()
-        {
-            twoNumberSum = new TwoNumberSum();
-        }
-
         [Test]
         public void BurteForceWorks()
         {
             int[] testArray = { 3, 5, -4, 8, 11, 1, -1, 6 };
             int testTargetSum = 10;
 
-            int[] results = twoNumberSum.BurteForce(testArray, testTargetSum);
+            int[] results = TwoNumberSum.BurteForce(testArray, testTargetSum);
 
             int[] expected = { -1, 11 };
             Assert.That(expected, Is.EqualTo(results));
@@ -30,7 +25,7 @@ namespace Questions.Test
             int[] expected = { 4, 6 };
             int testSum = 10;
 
-            int[] results = twoNumberSum.BurteForce(expected, testSum);
+            int[] results = TwoNumberSum.BurteForce(expected, testSum);
 
             Assert.That(expected, Is.EqualTo(results));
         }
@@ -38,12 +33,12 @@ namespace Questions.Test
         [Test]
         public void TestCase2()
         {
-            int[] expected = { -9, 8 };
-            int[] testArray = { 2, 0, 23, 8, 1, -9 };
-            int testSum = -1;
+            int[] expected = { -1, 11 };
+            int[] testArray = { 3,5,-4,8,11,1,-1,6};
+            int testSum = 10;
 
-            int[] results = twoNumberSum.BurteForce(testArray, testSum);
-
+            int[] results = TwoNumberSum.TwoNumberSum2(testArray, testSum);
+        //    Array.Sort(results);
             Assert.That(expected, Is.EqualTo(results));
         }
 

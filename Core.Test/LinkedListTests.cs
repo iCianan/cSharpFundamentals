@@ -26,7 +26,7 @@ namespace Core.Test
             list.Add(item1);
             list.Add(item2);
 
-            Assert.That(list.head.Next, Is.EqualTo(list.tail));
+            Assert.That(list.Head.Next, Is.EqualTo(list.Tail));
         }
         [Test]
         public void DoublyLinkedList_Should_RemoveItem_When_GivenIndex()
@@ -49,7 +49,7 @@ namespace Core.Test
             var list = GetSampleLinkedList();
 
             //act
-            list.PrintReversedLinkedList(list.head);
+            list.PrintReversedLinkedList(list.Head);
 
             //assert
         }

@@ -7,41 +7,41 @@ namespace Core
 {
     public class DoublyLinkedList<T>
     {
-        public Node<T> head;
-        public Node<T> tail;
-        public int count;
+        public Node<T> Head;
+        public Node<T> Tail;
+        public int Count;
         public DoublyLinkedList()
         {
-            this.head = null;
-            this.tail = null;
-            this.count = 0;      
+            this.Head = null;
+            this.Tail = null;
+            this.Count = 0;      
         }
 
        public void Add(T node)
         {
             Node<T> newNode = new Node<T>(node);
 
-            if (head == null)
+            if (Head == null)
             {
-                this.head = newNode;
-                this.tail = newNode;               
+                this.Head = newNode;
+                this.Tail = newNode;               
             }
             else
             {
-                this.tail.Next = newNode;
-                newNode.Prev = this.tail;
-                this.tail = newNode;
+                this.Tail.Next = newNode;
+                newNode.Prev = this.Tail;
+                this.Tail = newNode;
             }
-            this.count++;
+            this.Count++;
         }
         public T RemoveAt(int index)
         {
-            if (index > count || index  < 0)
+            if (index > Count || index  < 0)
             {
                 throw new IndexOutOfRangeException("Get it together");
             }
 
-            Node<T> current = head;
+            Node<T> current = Head;
             while (current != null && index != 0)
             {
                 index--;

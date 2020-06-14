@@ -29,42 +29,34 @@ namespace Core
             EatBreakfast();
             Console.WriteLine("Ok ready to go to work");
         }
-        public int IterativeArraySum(int[] numbers, int size)
+        public int IterativeArraySum(int[] numbers)
         {
             int sum = 0;
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 sum += numbers[i];
             }
             return sum;
         }
-        public int IterativeArraySumDelgate(int[] numbers, int size)
+
+        public int ArraySumDelgate(int[] numbers)
         {
-            if (size == 0)
-            {
-                return 0;
-            }
-            int lastNumber = numbers[size - 1];
-            int allButLastSum = IterativeArraySum(numbers, size - 1);
+            if (numbers.Length== 0) return 0;
+            int lastNumber = numbers[numbers.Length- 1];
+            int allButLastSum = IterativeArraySum(numbers[..^1]);
             return lastNumber + allButLastSum;
         }
-        public int IterativeArraySumRecursive(int[] numbers, int size)
+
+        public int ArraySumRecursive(int[] numbers)
         {
-            if (size == 0)
-            {
-                return 0;
-            }
-            int lastNumber = numbers[size - 1];
-            int allButLastSum = IterativeArraySumRecursive(numbers, size - 1);
+            if (numbers.Length == 0) return 0;
+            int lastNumber = numbers[numbers.Length - 1];
+            int allButLastSum = ArraySumRecursive(numbers[..^1]);
             return lastNumber + allButLastSum;
         }
-        public int Fibonacci(int n)
+        public int GetNthFib(int n)
         {
-            if (n == 0 || n == 1)
-            {
-                return n;
-            }
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
+            return n;
         }
         public int countEvenPassed(int[] array)
         {
