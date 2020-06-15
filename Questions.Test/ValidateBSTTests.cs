@@ -27,6 +27,23 @@ namespace Questions.Test
 
             //assert
             Assert.That(results, Is.True);
+        }        
+        [Test]
+        public void Validating_Should_AddNewNodeToTree_When_GivenAnInteger()
+        {
+            //arrange
+            var BST = new BST(10);
+            var sut = new[] { 5,15,10};
+            foreach (var number in sut)
+            {
+                BST.Insert(number);
+            }
+
+            //act
+            bool results = ValidateBST.Validating(BST);
+
+            //assert
+            Assert.That(results, Is.False);
         }
     }
 }

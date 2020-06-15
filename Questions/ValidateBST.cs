@@ -38,9 +38,23 @@ namespace Questions
                 return true;
             }
             return false;
-            
-            
+        }
+        public static bool Validating(BST root)
+        {
+            return Validator(root, int.MaxValue, int.MinValue);
+        }
 
+        private static bool Validator(BST root, int maxValue, int minValue)
+        {
+            if (root == null)
+            {
+                return true;
+            }
+            if (root.value >= maxValue || root.value < minValue)
+            {
+                return false;
+            }
+            return Validator(root.left, root.value, minValue) && Validator(root.right, maxValue, root.value);
         }
     }
 }

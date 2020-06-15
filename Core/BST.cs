@@ -24,7 +24,7 @@ namespace Core
             BST current = this;
             while (true)
             {
-                if (current.value > value)
+                if (current.value >= value)
                 {
                     if (current.left == null)
                     {
