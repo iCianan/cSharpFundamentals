@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace Core.Test
 {
+    [TestFixture]
     public class SortingTests
     {
         private int[] unsortedArray;
@@ -19,10 +20,11 @@ namespace Core.Test
         [Category("InsertionSort")]
         public void InsertionSort_Should_ReturnEmptyArray_When_InputArrayIsEmpty()
         {
-            int[] expected = { };
-            int[] actual = InsertionSort.Sort(expected);
+            int[] expected = { 2,1,2,2,2,3,4,2};
 
-            Assert.That(actual, Is.EqualTo(expected));
+            int[] sut = InsertionSort.Sort(expected);
+
+            Assert.That(sut, Is.EqualTo(expected));
         }
 
         [Test]
