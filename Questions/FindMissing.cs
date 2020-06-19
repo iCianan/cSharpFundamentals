@@ -8,6 +8,12 @@ namespace Questions
 {
     public static class FindMissing
     {
+        public static int Find_Set(int[] fullSet, int[] partialSet)
+        {
+            var misssing_item = fullSet.Except(partialSet).First();
+            return misssing_item;
+
+        }
         public static int Find(int[] first, int[] second)
         {
             int result = int.MaxValue;
@@ -42,4 +48,5 @@ namespace Questions
             return result;
         }
     }
+
 }
